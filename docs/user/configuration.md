@@ -5,7 +5,7 @@ Configure **everything** in `/var/lib/noctalia-greeter/greeter.toml` (Nix: `prog
 | Path | Role |
 |------|------|
 | `/var/lib/noctalia-greeter/greeter.toml` | Full declarative config (scheme, palette, wallpaper, output, cursor, …). Wins over Sync when set |
-| `/var/lib/noctalia-greeter/sync.toml` | Sync mutable data (palette, wallpaper refs, session actions, last session/scheme, layout/transforms/scales). Loses to greeter.toml |
+| `/var/lib/noctalia-greeter/sync.toml` | Sync + UI mutable (palette, wallpaper refs, session actions, last session/scheme, layout/transforms/scales). Loses to greeter.toml |
 | `/var/lib/noctalia-greeter/wallpaper*` | Sync-installed wallpaper image files |
 
 The **Synced** scheme uses a complete `[appearance.palette]` from `greeter.toml` when present, otherwise the same keys from `sync.toml`. (Legacy live `appearance.json` is migrated into `sync.toml` once.)
@@ -54,7 +54,7 @@ Set these in **`greeter.toml`**. The greeter UI and Sync do not change them. Whe
 | `[appearance].password_style` | Password mask: `default` or `random` |
 | `[appearance].hide_logo` | Hide the Noctalia brand logo (`true` / `false`) |
 | `[appearance].hide_session_selector` | Hide the session selector (`true` / `false`; default `false`) |
-| `[appearance].hide_theme_selector` | Hide the theme selector (`true` / `false`; default `false`) |
+| `[appearance].hide_scheme_selector` | Hide the scheme selector (`true` / `false`; default `false`) |
 | `[appearance].hide_shutdown_button` | Hide the shutdown button (`true` / `false`; default `false`) |
 | `[appearance].hide_reboot_button` | Hide the reboot button (`true` / `false`; default `false`) |
 | `[appearance].hide_firmware_button` | Hide the firmware button (`true` / `false`; default `false`) |
@@ -116,7 +116,7 @@ password_style = "random"
 hide_logo = false
 # Hide individual controls. Omitted values default to false.
 hide_session_selector = false
-hide_theme_selector = false
+hide_scheme_selector = false
 hide_shutdown_button = false
 hide_reboot_button = false
 hide_firmware_button = false

@@ -83,10 +83,14 @@ in
       example = lib.literalExpression ''
         {
           session.default = "niri";
-          appearance.hide_session_selector = true;
           appearance = {
             scheme = "Synced";
             password_style = "default";
+            hide_session_selector = true;
+            hide_scheme_selector = false;
+            hide_shutdown_button = true;
+            hide_reboot_button = false;
+            hide_firmware_button = false;
             palette = {
               primary = "#fff59b";
               on_primary = "#0e0e43";
